@@ -1,0 +1,24 @@
+{
+    "pessoas": [
+      {
+        "id": 1,
+        "nome": "João",
+        "perfil": "Admin",
+        "idade": 30,
+        "email": "joao@example.com",
+        "ativo": true,
+        "pais": "Brasil",
+        "nivelExperiencia": "Sênior"
+      },
+      {
+        "id": 2,
+        "nome": "Maria",
+        "perfil": "Usuário",
+        "idade": 25,
+        "email": "maria@example.com",
+        "ativo": true,
+        "pais": "Brasil",
+        "nivelExperiencia": "Pleno"
+      }
+    ]
+  }
