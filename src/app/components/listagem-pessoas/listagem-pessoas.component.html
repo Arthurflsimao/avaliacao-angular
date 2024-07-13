@@ -1,36 +1,39 @@
 <!-- src/app/components/listagem-pessoas/listagem-pessoas.component.html -->
 <div class="container mt-4">
-    <h2>Listagem de Pessoas</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Perfil</th>
-          <th>Idade</th>
-          <th>Email</th>
-          <th>Ativo</th>
-          <th>País</th>
-          <th>Nível de Experiência</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let pessoa of pessoas">
-          <td>{{ pessoa.id }}</td>
-          <td>{{ pessoa.nome }}</td>
-          <td>{{ pessoa.perfil }}</td>
-          <td>{{ pessoa.idade }}</td>
-          <td>{{ pessoa.email }}</td>
-          <td>{{ pessoa.ativo ? 'Sim' : 'Não' }}</td>
-          <td>{{ pessoa.pais }}</td>
-          <td>{{ pessoa.nivelExperiencia }}</td>
-          <td>
-            <a [routerLink]="['/editar', pessoa.id]" class="btn btn-primary btn-sm">Editar</a>
-            <button (click)="deletePessoa(pessoa.id)" class="btn btn-danger btn-sm">Excluir</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h2>Listagem de Pessoas</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Perfil</th>
+        <th>Idade</th>
+        <th>Email</th>
+        <th>Ativo</th>
+        <th>País</th>
+        <th>Nível de Experiência</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pessoa of pessoas">
+        <td>{{ pessoa.id }}</td>
+        <td>{{ pessoa.nome }}</td>
+        <td>{{ pessoa.perfil }}</td>
+        <td>{{ pessoa.idade }}</td>
+        <td>{{ pessoa.email }}</td>
+        <td>{{ pessoa.ativo ? 'Sim' : 'Não' }}</td>
+        <td>{{ pessoa.pais }}</td>
+        <td>{{ pessoa.nivelExperiencia }}</td>
+        <td>
+          <a [routerLink]="['/editar', pessoa.id]" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="deletePessoa(pessoa.id)" class="btn btn-danger btn-sm">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a [routerLink]="['/cadastro']" class="btn btn-success mt-3">Cadastrar Nova Pessoa</a>
+</div>
+
+
   

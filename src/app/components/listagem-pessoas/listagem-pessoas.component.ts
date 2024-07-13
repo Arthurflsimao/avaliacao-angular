@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PessoaService } from '../../services/pessoa.service';
 import { Pessoa } from '../../models/pessoa.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-pessoas',
@@ -11,7 +12,7 @@ import { Pessoa } from '../../models/pessoa.model';
 export class ListagemPessoasComponent implements OnInit {
   pessoas: Pessoa[] = [];
 
-  constructor(private pessoaService: PessoaService) { }
+  constructor(private pessoaService: PessoaService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadPessoas();
@@ -31,3 +32,4 @@ export class ListagemPessoasComponent implements OnInit {
     }
   }
 }
+

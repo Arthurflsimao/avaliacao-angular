@@ -10,34 +10,28 @@ import { Pessoa } from '../../models/pessoa.model';
   styleUrls: ['./edicao-pessoa.component.css']
 })
 export class EdicaoPessoaComponent implements OnInit {
-  pessoa: Pessoa = {
-    id: 0,
-    nome: '',
-    perfil: '',
-    idade: 0,
-    email: '',
-    ativo: false,
-    pais: '',
-    nivelExperiencia: ''
-  };
-  id: number = 0;
+  pessoa: Pessoa | undefined;
 
   constructor(
-    private pessoaService: PessoaService,
     private route: ActivatedRoute,
+    private pessoaService: PessoaService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id')!;
-    this.pessoaService.getPessoa(this.id).subscribe(data => {
-      this.pessoa = data;
+    this.route.params.subscribe(params => {
+      const id = +params['id'];
+      this.pessoaService.getPessoa(id).subscribe(data => {
+        this.pessoa = data;
+      });
     });
   }
 
   onSubmit(): void {
-    this.pessoaService.updatePessoa(this.id, this.pessoa).subscribe(() => {
-      this.router.navigate(['/']);
-    });
+    if (this.pessoa) {
+      this.pessoaService.updatePessoa(this.pessoa.id, this.pessoa).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    }
   }
 }
