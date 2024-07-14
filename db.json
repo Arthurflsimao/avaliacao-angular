@@ -1,24 +1,24 @@
 {
-    "pessoas": [
-      {
-        "id": 1,
-        "nome": "João",
-        "perfil": "Admin",
-        "idade": 30,
-        "email": "joao@example.com",
-        "ativo": true,
-        "pais": "Brasil",
-        "nivelExperiencia": "Sênior"
-      },
-      {
-        "id": 2,
-        "nome": "Maria",
-        "perfil": "Usuário",
-        "idade": 25,
-        "email": "maria@example.com",
-        "ativo": true,
-        "pais": "Brasil",
-        "nivelExperiencia": "Pleno"
-      }
-    ]
-  }
+  "pessoas": [
+    {
+      "id": "0",
+      "nome": "Ronaldo",
+      "perfil": "Pedreiro",
+      "idade": 22,
+      "email": "ronaldo@gmail.com",
+      "ativo": false,
+      "pais": "Brasil",
+      "nivelExperiencia": "Senior"
+    },
+    {
+      "id": "1",
+      "nome": "Arthur",
+      "perfil": "Dev",
+      "idade": 20,
+      "email": "arthur@gmail.com",
+      "ativo": true,
+      "pais": "Brasil",
+      "nivelExperiencia": "Junior"
+    }
+  ]
+}

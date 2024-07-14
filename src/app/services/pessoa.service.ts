@@ -1,4 +1,3 @@
-// src/app/services/pessoa.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,7 +7,7 @@ import { Pessoa } from '../models/pessoa.model';
   providedIn: 'root'
 })
 export class PessoaService {
-  private apiUrl = 'http://localhost:3000/pessoas';  // URL da API
+  private apiUrl = 'http://localhost:3000/pessoas';
 
   constructor(private http: HttpClient) { }
 
@@ -24,8 +23,8 @@ export class PessoaService {
     return this.http.post<Pessoa>(this.apiUrl, pessoa);
   }
 
-  updatePessoa(id: number, pessoa: Pessoa): Observable<Pessoa> {
-    return this.http.put<Pessoa>(`${this.apiUrl}/${id}`, pessoa);
+  updatePessoa(id: number, pessoa: Pessoa): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}`, pessoa);
   }
 
   deletePessoa(id: number): Observable<void> {

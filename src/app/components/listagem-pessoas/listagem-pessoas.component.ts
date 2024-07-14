@@ -1,8 +1,7 @@
-// src/app/components/listagem-pessoas/listagem-pessoas.component.ts
 import { Component, OnInit } from '@angular/core';
 import { PessoaService } from '../../services/pessoa.service';
 import { Pessoa } from '../../models/pessoa.model';
-import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listagem-pessoas',
@@ -12,24 +11,42 @@ import { Router } from '@angular/router';
 export class ListagemPessoasComponent implements OnInit {
   pessoas: Pessoa[] = [];
 
-  constructor(private pessoaService: PessoaService, private router: Router) { }
+  constructor(private pessoaService: PessoaService) { }
 
   ngOnInit(): void {
-    this.loadPessoas();
+    this.carregarPessoas();
   }
 
-  loadPessoas(): void {
+  carregarPessoas(): void {
     this.pessoaService.getPessoas().subscribe(data => {
       this.pessoas = data;
     });
   }
 
-  deletePessoa(id: number): void {
-    if (confirm('Tem certeza que deseja excluir esta pessoa?')) {
-      this.pessoaService.deletePessoa(id).subscribe(() => {
-        this.loadPessoas();
-      });
-    }
+  excluirPessoa(id: number): void {
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Você não poderá reverter isso!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, excluir!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.pessoaService.deletePessoa(id).subscribe(() => {
+          Swal.fire(
+            'Excluído!',
+            'A pessoa foi excluída.',
+            'success'
+          );
+          this.carregarPessoas();
+        });
+      }
+    });
   }
 }
+
+
 
