@@ -2,21 +2,41 @@
   "pessoas": [
     {
       "id": "0",
-      "nome": "Ronaldo",
-      "perfil": "Pedreiro",
-      "idade": 22,
-      "email": "ronaldo@gmail.com",
-      "ativo": false,
-      "pais": "Brasil",
-      "nivelExperiencia": "Senior"
-    },
-    {
-      "id": "1",
       "nome": "Arthur",
       "perfil": "Dev",
       "idade": 20,
       "email": "arthur@gmail.com",
       "ativo": true,
+      "pais": "Brasil",
+      "nivelExperiencia": "Junior"
+    },
+    {
+      "id": "1",
+      "nome": "Maria",
+      "perfil": "DBA",
+      "idade": 20,
+      "email": "maria@gmail.com",
+      "ativo": true,
+      "pais": "Brasil",
+      "nivelExperiencia": "Senior"
+    },
+    {
+      "id": "2",
+      "nome": "Ronaldo",
+      "perfil": "Dev",
+      "idade": 22,
+      "email": "ronaldo@gmail.com",
+      "ativo": true,
+      "pais": "Brasil",
+      "nivelExperiencia": "Junior"
+    },
+    {
+      "id": "3",
+      "nome": "Felipe",
+      "perfil": "Dev",
+      "idade": 21,
+      "email": "felipe@gmail.com",
+      "ativo": false,
       "pais": "Brasil",
       "nivelExperiencia": "Junior"
     }
