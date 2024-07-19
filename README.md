@@ -1,5 +1,8 @@
 # Avaliação Angular
 
+![Angular](https://img.shields.io/badge/angular-13.0.0-red)
+
+
 Este repositório contém uma avaliação prática de Angular.
 
 ## Descrição
