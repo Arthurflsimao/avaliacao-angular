@@ -1,0 +1,26 @@
+<h2>Lista de Operações</h2>
+<div *ngIf="operations.length === 0" class="alert alert-info">
+  Nenhuma operação encontrada.
+</div>
+<table class="table table-striped" *ngIf="operations.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Categoria</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let operation of operations">
+      <td>{{ operation.id }}</td>
+      <td>{{ operation.name }}</td>
+      <td>{{ operation.description }}</td>
+      <td>{{ operation.category }}</td>
+      <td>
+        <button (click)="deleteOperation(operation.id)" class="btn btn-danger">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
